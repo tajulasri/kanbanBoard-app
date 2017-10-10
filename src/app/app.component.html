@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+
+ <app-navbar></app-navbar>
+
+ <div class="section">
+        <div class="columns">
+          <aside class="column is-2">
+            <nav class="menu">
+              <p class="menu-label">
+                General
+              </p>
+              <ul class="menu-list">
+                <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+              </ul>
+            </nav>
+          </aside>
+      
+          <div class="column">
+            <div class="box">
+                <router-outlet></router-outlet> 
+            </div>
+          </div>
+      </div>
+      </div>
+
