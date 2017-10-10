@@ -17,15 +17,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 
 const routes: Route[] = [
-
-  {
-    path: '',
-    component: DashboardComponent,
-  },
-  {
-    path: 'issues',
-    component: IssueComponent
-  },
+  LoginComponent.routes,
+  DashboardComponent.routes,
+  IssueComponent.routes,
   {
     path: 'projects',
     component: ProjectComponent
@@ -56,7 +50,7 @@ const routes: Route[] = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes,{enableTracing: true})
+    RouterModule.forRoot(routes, {enableTracing: true})
   ],
   providers: [TaskServiceService],
   bootstrap: [AppComponent]
