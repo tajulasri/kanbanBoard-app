@@ -1,3 +1,5 @@
+import { TaskServiceService } from './service/task-service.service';
+import { resolve } from 'path';
 import {RouterModule,Route} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -56,7 +58,7 @@ const routes: Route[] = [
     HttpModule,
     RouterModule.forRoot(routes,{enableTracing: true})
   ],
-  providers: [],
+  providers: [TaskServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
