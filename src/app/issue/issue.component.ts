@@ -1,3 +1,5 @@
+import { Issue } from "../models/Issue";
+import { IssueServiceService } from "../service/issue-service.service";
 import { Route } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 
@@ -7,12 +9,25 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./issue.component.css"]
 })
 export class IssueComponent implements OnInit {
-  static routes: Route = {
-    path: 'issues',
-    component: IssueComponent
-  };
+  issues: Array<Issue> = [];
+  serviceError: any = {
+    error: false,
+    message: '',
+  }
 
-  constructor() {}
+  constructor(private issueService: IssueServiceService) {
+    this.issueService
+      .getIssues(200)
+      .then((data) => {
+        data.forEach(item => {
+          this.issues.push(item);
+        });
+      })
+      .catch(err => {
+          this.serviceError.error = true;
+          this.serviceError.message = err;
+      });
+  }
 
   ngOnInit() {}
 }

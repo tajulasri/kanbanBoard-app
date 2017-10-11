@@ -7,12 +7,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  static routes: Route = {
-    path: 'login',
-    component: LoginComponent
-  };
-
-  constructor() {}
+  navbarShow: boolean;
+  constructor() {
+    this.navbarShow = true;
+  }
 
   ngOnInit() {}
 }

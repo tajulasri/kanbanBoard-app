@@ -1,3 +1,44 @@
-<p>
-  issue works!
-</p>
+<div class="columns">
+  <div class="column">
+        <article *ngIf="serviceError.error" class="message is-danger">
+        <div class="message-body">
+          Issue cant be loaded for a moment. {{ serviceError.message }}
+        </div>
+      </article>
+  </div>
+</div>
+
+<div class="columns">
+
+    <div class="column">
+        <div class="field has-addons is-pulled-left">
+            <div class="control is-expanded">
+              <div class="select is-fullwidth">
+                <select name="country">
+                  <option value="Argentina">Bug</option>
+                  <option value="Bolivia">Enhancement</option>
+                  <option value="Brazil">Issue</option>
+                </select>
+              </div>
+            </div>
+            <div class="control">
+              <button type="submit" class="button is-danger">Filter</button>
+            </div>
+          </div>
+
+        <a class="button is-success is-pulled-right"> New issue</a>
+    </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+      <app-issuecard issue="{description: 'testing'}"></app-issuecard>
+  </div>
+</div>
