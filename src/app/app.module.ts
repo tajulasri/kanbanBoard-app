@@ -1,27 +1,28 @@
-import { IssueServiceService } from './service/issue-service.service';
-import { DashboardRoute } from './dashboard/dashboard.routes';
-import { TaskServiceService } from './service/task-service.service';
-import { resolve } from 'path';
-import {RouterModule,Route} from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { AppConfig } from './shared/config/app.config';
+import { IssueServiceService } from "./service/issue-service.service";
+import { DashboardRoute } from "./dashboard/dashboard.routes";
+import { TaskServiceService } from "./service/task-service.service";
+import { resolve } from "path";
+import { RouterModule, Route } from "@angular/router";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { IssueComponent } from './issue/issue.component';
-import { ProjectComponent } from './project/project.component';
-import { TaskComponent } from './task/task.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SimplecardComponent } from './shared/components/simplecard/simplecard.component';
-import { ListviewComponent } from './shared/components/listview/listview.component';
-import { IssuecardComponent } from './shared/components/issuecard/issuecard.component';
-import { issueRoute } from './issue/issue.routes';
-import { loginRoute } from './login/login.routes';
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
+import { UserComponent } from "./user/user.component";
+import { IssueComponent } from "./issue/issue.component";
+import { ProjectComponent } from "./project/project.component";
+import { TaskComponent } from "./task/task.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { SimplecardComponent } from "./shared/components/simplecard/simplecard.component";
+import { ListviewComponent } from "./shared/components/listview/listview.component";
+import { IssuecardComponent } from "./shared/components/issuecard/issuecard.component";
+import { issueRoute } from "./issue/issue.routes";
+import { loginRoute } from "./login/login.routes";
 
 
 const routes: Route[] = [
@@ -29,22 +30,21 @@ const routes: Route[] = [
   DashboardRoute,
   issueRoute,
   {
-    path: 'projects',
+    path: "projects",
     component: ProjectComponent
   },
   {
-    path: 'users',
+    path: "users",
     component: UserComponent
   },
   {
-    path: 'tasks',
+    path: "tasks",
     component: TaskComponent
   },
   {
-    path: 'issues',
+    path: "issues",
     component: IssueComponent
-  },
-
+  }
 ];
 
 @NgModule({
@@ -66,9 +66,9 @@ const routes: Route[] = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes, {enableTracing: true})
+    RouterModule.forRoot(routes, { enableTracing: true })
   ],
-  providers: [TaskServiceService,IssueServiceService],
+  providers: [TaskServiceService, IssueServiceService, AppConfig],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
