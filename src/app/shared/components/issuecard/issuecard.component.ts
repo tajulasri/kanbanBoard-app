@@ -13,6 +13,6 @@ export class IssuecardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 }

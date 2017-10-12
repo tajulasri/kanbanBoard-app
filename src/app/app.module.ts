@@ -6,7 +6,7 @@ import { resolve } from "path";
 import { RouterModule, Route } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
@@ -23,6 +23,8 @@ import { ListviewComponent } from "./shared/components/listview/listview.compone
 import { IssuecardComponent } from "./shared/components/issuecard/issuecard.component";
 import { issueRoute } from "./issue/issue.routes";
 import { loginRoute } from "./login/login.routes";
+import { IssuecreatemodalComponent } from './shared/components/issuecreatemodal/issuecreatemodal.component';
+import { StoreModule } from '@ngrx/store';
 
 
 const routes: Route[] = [
@@ -60,12 +62,14 @@ const routes: Route[] = [
     ProfileComponent,
     SimplecardComponent,
     ListviewComponent,
-    IssuecardComponent
+    IssuecardComponent,
+    IssuecreatemodalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes, { enableTracing: true })
   ],
   providers: [TaskServiceService, IssueServiceService, AppConfig],

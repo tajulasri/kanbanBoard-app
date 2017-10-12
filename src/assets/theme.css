@@ -4,5 +4,41 @@ body {
 }
 
 .padding-top-10 {
-    padding-top: 10%;
+    padding-top: 10px;
+}
+
+.padding-left-10 {
+    padding-left: 10px;
+}
+
+.margin-top-5 {
+    margin-top: 5px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+a.default {
+
+    color: inherit;
+}
+
+.left-placing-under {
+    display: block;
+    clear: left;
+    position: relative;
+    left: 40px;
+}
+
+a.default:hover {
+    color: #0366d6;
 }

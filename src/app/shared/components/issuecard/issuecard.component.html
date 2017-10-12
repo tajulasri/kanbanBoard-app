@@ -8,13 +8,45 @@
         
         </div>
         <div class="media-content">
-            <p class="is-pulled-left"><a>Some description</a></p>
-            <p class="is-pulled-right"> <span class="tag is-warning">Warning</span> <span class="tag is-danger">Bug</span> <span class="tag is-info">Enhancement</span></p>
+            <div class="is-pulled-left margin-top-5 checkbox">
+                <input type="checkbox" />
+            </div>
+
+            <div class="is-pulled-left margin-top-5 padding-left-10">
+                <a href="#"><i class="is-pulled-left fa fa-tag"> </i></a>
+                </div>
+
+            <div class="description-container">
+                 <h3 class="is-pulled-left  padding-left-10"><a href="#" class="default"><strong>Main Title</strong></a></h3>
+                <div class="margin-top-5">
+                    <p class="left-placing-under margin-left-10"> Bug opened by syahmi class one.</p>
+                    <p class="is-pulled-left left-placing-under margin-left-10"> <span class="tag is-warning">Warning</span> <span class="tag is-danger">Bug</span> <span class="tag is-info">Enhancement</span></p>
+                </div>
+     
+               <span class="is-pulled-right"><i class="fa fa-comment-o"> </i></span>
+            </div>
         </div>
       </div>
   
       <div class="content">
-          <span class=""> <h3 class="has-text-centered">{{ issue.description}}</h3></span>
+          <span class=""> <h3 class="has-text-centered">{{ issue?.description}}</h3></span>
       </div>    
     </div>
+</div>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
 </div>
