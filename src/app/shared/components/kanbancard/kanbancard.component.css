@@ -1,0 +1,7 @@
+.kanban-card {
+    min-height: 100px;
+    padding: 10px;
+}
+.kanban-card:hover {
+    background-color: #f7f7f7;
+}

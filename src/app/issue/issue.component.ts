@@ -2,7 +2,6 @@ import { Issue } from "../models/Issue";
 import { IssueServiceService } from "../service/issue-service.service";
 import { Route } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
 import {
   FormControl,
   FormGroup,
@@ -32,9 +31,9 @@ export class IssueComponent implements OnInit {
 
   createForm() {
     this.issueFormGroup = new FormGroup({
-      project: new FormControl(''),
-      issue: new FormControl(''),
-      description: new FormControl('')
+      project: new FormControl(""),
+      issue: new FormControl(""),
+      description: new FormControl("")
     });
   }
 
@@ -50,6 +49,12 @@ export class IssueComponent implements OnInit {
         this.serviceError.error = true;
         this.serviceError.message = err;
       });
+  }
+
+  filterLabel(label: number) {
+    this.issues.filter(item => {
+      return (item.status_id = label);
+    });
   }
 
   toggleModal() {

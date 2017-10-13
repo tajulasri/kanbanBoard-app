@@ -6,6 +6,7 @@ export interface Issue {
     project: any;
     title: string;
     description: string;
+    status_id: number;
     attachment: any;
     due_date: string;
     created_at: string;

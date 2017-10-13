@@ -1,0 +1,19 @@
+.card:hover {
+
+    background-color: #f3f3f3;
+}
+
+.kanban-header{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.kanban-text-container {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #f3f3f3;
+}
+.kanban-text {
+    color: #363636;
+}

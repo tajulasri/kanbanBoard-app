@@ -1,4 +1,4 @@
-import { AppConfig } from './shared/config/app.config';
+import { AppConfig } from "./shared/config/app.config";
 import { IssueServiceService } from "./service/issue-service.service";
 import { DashboardRoute } from "./dashboard/dashboard.routes";
 import { TaskServiceService } from "./service/task-service.service";
@@ -6,7 +6,7 @@ import { resolve } from "path";
 import { RouterModule, Route } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
@@ -23,9 +23,9 @@ import { ListviewComponent } from "./shared/components/listview/listview.compone
 import { IssuecardComponent } from "./shared/components/issuecard/issuecard.component";
 import { issueRoute } from "./issue/issue.routes";
 import { loginRoute } from "./login/login.routes";
-import { IssuecreatemodalComponent } from './shared/components/issuecreatemodal/issuecreatemodal.component';
-import { StoreModule } from '@ngrx/store';
-
+import { IssuecreatemodalComponent } from "./shared/components/issuecreatemodal/issuecreatemodal.component";
+import { CanActivateUser } from "./service/auth.service";
+import { KanbancardComponent } from './shared/components/kanbancard/kanbancard.component';
 
 const routes: Route[] = [
   loginRoute,
@@ -41,7 +41,8 @@ const routes: Route[] = [
   },
   {
     path: "tasks",
-    component: TaskComponent
+    component: TaskComponent,
+    canActivate: [CanActivateUser]
   },
   {
     path: "issues",
@@ -63,7 +64,8 @@ const routes: Route[] = [
     SimplecardComponent,
     ListviewComponent,
     IssuecardComponent,
-    IssuecreatemodalComponent
+    IssuecreatemodalComponent,
+    KanbancardComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,12 @@ const routes: Route[] = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes, { enableTracing: true })
   ],
-  providers: [TaskServiceService, IssueServiceService, AppConfig],
+  providers: [
+    TaskServiceService,
+    IssueServiceService,
+    AppConfig,
+    CanActivateUser
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
